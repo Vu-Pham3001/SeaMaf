@@ -11394,6 +11394,10 @@ textarea.form-control-lg {
   display: none !important;
 }
 
+.slick-arrow {
+  display: none !important;
+}
+
 .banner-left {
   background-image: url(/images/jellyfish-698521_1280.jpg.jpg.webp?e9c3e0d41f31ebfc2b50921c25fae62b);
   background-size: cover;

@@ -40,7 +40,7 @@
         <script>
             AOS.init();
         </script>
-        <script src="./javascript/index.js"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
     </section>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
