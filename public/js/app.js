@@ -5423,7 +5423,7 @@ var app = new Vue({
   el: '#app'
 });
 
-__webpack_require__(/*! ./index.js */ "./resources/js/index.js");
+__webpack_require__(/*! ./index */ "./resources/js/index.js");
 
 /***/ }),
 

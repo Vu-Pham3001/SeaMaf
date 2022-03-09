@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('price')->nullable();
             $table->integer('is_top')->nullable();
             $table->integer('on_sale')->nullable();
+            $table->string('sale')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
