@@ -11,6 +11,7 @@
                 <form action="{{route ('login') }}" method="POST" class="form-box d-flex flex-column justify-content-center align-items-center">
                     @csrf
                     <div class="title-login">Login to your account</div>
+                    @include('auth.alert')
                     <div class="form-input">
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email Address" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
@@ -35,7 +36,7 @@
                         <label for="remember">Remember me</label>
                     </div>
 
-                    <input type="submit" value="Login" class="btn-login">
+                    <input type="submit" value="Login" class="btn-login" >
                     <!-- @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}

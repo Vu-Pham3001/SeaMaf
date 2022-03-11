@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('admin/profile',[App\Http\Controllers\AdminController::class, 'index'])->name('profile')->middleware('profile');
+
+Route::get('user/profle', [App\Http\Controllers\AdminController::class, 'user'])->name('userprofile');
+
+Route::get('admin/add', [App\Http\Controllers\Products::class, 'add'])->name('addmenu');
+
+Route::post('admin/add', [App\Http\Controllers\Products::class, 'store'])->name('store');

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Auth;
+use Session;
 
 class LoginController extends Controller
 {
@@ -52,7 +53,10 @@ class LoginController extends Controller
         if(Auth::attempt($arr)){
             return redirect('/');
         } else {
-            return redirect()->back()->with('error', 'Username or password is incorrect');
+
+            Session::flash('error', 'Đăng nhập thất bại');
+
+            return redirect()->back();
         }
     }
 

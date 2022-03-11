@@ -12,7 +12,7 @@
                     @csrf
                     <div class="title-login">Create an account</div>
                     <div class="form-input">
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Name">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Name" required autocomplete="new-name">
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="form-input">
-                        <input type="password" class="form-control" name="password" placeholder="Confirm Password" required autocomplete="new-password">
+                        <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
                     </div>
 
                     <input type="submit" value="Register" class="btn-login">

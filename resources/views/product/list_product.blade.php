@@ -1,7 +1,8 @@
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-m-6 col-6">
     <div class="pro-filter-item">
         <div class="pi-pic border">
-            <div class="text-pro-filter">{{ $product->sale }}</div>
+            <img src="{{ $product->img }}" alt="{{$product->name}}">
+            <div class="text-pro-filter d-flex justify-content-center align-items-center">{{ $product->sale }}</div>
             <div class="icon-pro-filter d-flex flex-column">
                 <span>
                     <i class="far fa-heart heart-pro-filter"></i>

@@ -17,8 +17,9 @@ return new class extends Migration
             $table->increments('id');
             $table->string('code')->nullable();
             $table->string('name')->nullable();
+            $table->string('img', 255)->nullable();
             $table->string('description')->nullable();
-            $table->integer('categori_id');
+            $table->string('categori_id')->nullable();
             $table->integer('price')->nullable();
             $table->integer('is_top')->nullable();
             $table->integer('on_sale')->nullable();

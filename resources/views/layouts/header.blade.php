@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-2 d-flex justify-content-center align-items-center mt-2">
-                <a href="{{route('home')}}" class="title-header" style="color: #000;"><h4>RVM SeaMaf</h4></a>
+                <a href="/" class="title-header" style="color: #000;"><h4>RVM SeaMaf</h4></a>
             </div>
 
             <div class="col-xl-6 col-lg-5 mt-2">
@@ -84,6 +84,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a href="{{ route('profile') }}" style="text-decoration:none;"><div style="padding-left:16px; color: #000;">My Profile</div></a>
+                            <a href="" style="text-decoration:none;"><div style="padding-left:16px; color: #000;">My order</div></a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">

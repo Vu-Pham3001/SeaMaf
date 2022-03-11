@@ -15,8 +15,9 @@ class Product extends Model
     protected $fillable = [
         'code',
         'name',
+        'img',
         'description',
-        'category_id',
+        'categori_id',
         'price',
         'is_top',
         'on_sale',
@@ -40,6 +41,6 @@ class Product extends Model
 
     public function scopeProductTop($query)
     {
-        $query->orderByDesc('is_top')->limit(8);
+        $query->where('is_top',1)->limit(8);
     }
 }
