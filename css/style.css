@@ -1,0 +1,446 @@
+.header_top .title-header {
+  color: #000;
+}
+
+.header_top .title-header:hover {
+  text-decoration: none;
+}
+
+.header_top .search {
+  background-color: #ccc;
+  border-radius: 20px;
+  border: none;
+  height: 50px;
+}
+
+.navbar {
+  background-color: #282828 !important;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: #e70c1e !important;
+}
+
+.navbar-light .navbar-toggler {
+  background-color: #565656;
+  color: #fff;
+}
+
+.body {
+  position: relative;
+}
+
+.body .content-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.body .content-title-body {
+  font-size: 25px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.body p {
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+}
+
+.body .btn-content {
+  width: 150px;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.body .btn-content-buy {
+  background: 0;
+  border: solid white 1px;
+  color: #fff;
+}
+
+.body .btn-content-inqui {
+  color: #000;
+  background-color: #fff;
+}
+
+.features {
+  height: 70px;
+}
+
+.features .features-lr {
+  background-color: #f8f8f8;
+}
+
+.features .features-lr .features-icon {
+  height: 23px;
+}
+
+.features .features-lr .features-content {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.features .features-mid {
+  background-color: #f51167;
+}
+
+.features .features-mid .features-icon-mid {
+  height: 30px;
+}
+
+.features .features-mid .features-content-mid {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 769px) {
+  .features {
+    display: none;
+  }
+}
+
+.title-product {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  text-align: center;
+}
+
+.slick-dots li button {
+  display: none !important;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.banner-left {
+  background-image: url(../assets/img/jellyfish-698521_1280.jpg.jpg.webp);
+  background-size: cover;
+  background-position: top center;
+}
+
+.banner-right {
+  background-image: url(../assets/img/milky-way-2695569_1280.jpg.jpg.webp);
+  background-size: cover;
+  background-position: top center;
+}
+
+.banner {
+  height: 250px;
+  border-left: 5px solid #fff;
+  border-right: 5px solid #fff;
+  border-radius: 30px;
+  position: relative;
+}
+
+.banner .text-uppercase {
+  position: absolute;
+  right: 50px;
+  top: 25px;
+  color: #fff;
+  background-color: #f51167;
+  padding: 0 10px;
+}
+
+.banner .text-while {
+  margin-top: 50px;
+  margin-left: 25px;
+  text-transform: uppercase !important;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.banner .text-light {
+  margin-left: 25px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.banner .btn-banner {
+  margin-left: 25px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #f51167;
+  border-radius: 10px;
+  min-width: 147px;
+  height: 45px;
+}
+
+.title-pro-filter {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+}
+
+.pi-pic .text-pro-filter {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  left: 40px;
+  top: 14px;
+  font-size: 10px;
+  font-weight: 500;
+  background-color: #50e550;
+  padding: 0 10px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.pi-pic .icon-pro-filter {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+}
+
+.pi-pic .heart-pro-filter {
+  padding: 5px;
+  background-color: #f0f0f0;
+}
+
+.pi-pic .bag-pro-filter {
+  padding: 5px;
+  background-color: #f0f0f0;
+}
+
+.feedback {
+  background-image: url(../assets/img/feedback.jpg.jpg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  height: 205px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.feedback-new {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  font-size: 14px;
+  background-color: #50e550;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+.feedback-intro {
+  height: 100%;
+  margin-left: 15px;
+  color: #fff;
+}
+
+.title-feedback {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.feedback-content {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.btn-feedback {
+  background-color: #f51167;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  min-width: 167px;
+}
+
+.footer {
+  background-color: #282828;
+  padding-bottom: 10px;
+}
+
+.footer .title-footer {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+
+.footer .content-about {
+  color: #8f8f8f;
+  margin-bottom: 25px;
+}
+
+.footer .card-footer {
+  max-width: 100%;
+}
+
+.footer .title-link {
+  margin-left: 22px;
+}
+
+.footer a {
+  color: #8f8f8f;
+}
+
+.footer .img-blog-footer-top {
+  background-image: url(../assets/img/blog-footer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  margin-right: 22px;
+}
+
+.footer .img-blog-footer-bot {
+  background-image: url(../assets/img/blog-footer2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  margin-right: 22px;
+}
+
+.footer .title-contact {
+  color: #f51167;
+  font-size: 20px;
+}
+
+.footer .c::after {
+  content: "RVM SeaMaf ";
+  color: #8f8f8f;
+  margin-left: 5px;
+}
+
+.footer .b::after {
+  content: "108 Chinhoyi Street, Central Business District, Harare Zimbabwe ";
+  color: #8f8f8f;
+  margin-left: 5px;
+}
+
+.footer .t::after {
+  content: "+263782149840";
+  color: #8f8f8f;
+  margin-left: 5px;
+}
+
+.footer .e::after {
+  content: "rvmseamaf@gmail.com";
+  color: #8f8f8f;
+  margin-left: 5px;
+}
+
+.footer .icon-contact-footer {
+  font-size: 26px;
+}
+
+@media (min-width: 992px) {
+  .icon-inta::after {
+    content: "INSTAGRAM";
+    font-size: 12px;
+    color: #8f8f8f;
+    margin-left: 10px;
+  }
+  .icon-pinter::after {
+    content: "PINTEREST";
+    font-size: 12px;
+    color: #8f8f8f;
+    margin-left: 10px;
+  }
+  .icon-face::after {
+    content: "FACEBOOK";
+    font-size: 12px;
+    color: #8f8f8f;
+    margin-left: 10px;
+  }
+  .icon-twi::after {
+    content: "TWITTER";
+    font-size: 12px;
+    color: #8f8f8f;
+    margin-left: 10px;
+  }
+  .icon-ytb::after {
+    content: "YOUTUBE";
+    font-size: 12px;
+    color: #8f8f8f;
+    margin-left: 10px;
+  }
+  .icon-linked::after {
+    content: "LINKEDIN";
+    font-size: 12px;
+    color: #8f8f8f;
+    margin-left: 10px;
+  }
+}
+
+.img-login-left {
+  width: 45%;
+  background: url(../assets/img/img-login-left.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  width: 45%;
+}
+
+.card-body-login {
+  width: 55%;
+}
+
+.card-body-login .title-login {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-body-login .form-input {
+  width: 85%;
+  margin-bottom: 0.5rem;
+  height: 45px;
+}
+
+.card-body-login .remember {
+  width: 85%;
+}
+
+.card-body-login .btn-login {
+  width: 85%;
+  background-color: #f51167;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  font-size: 90%;
+  font-weight: 700;
+  color: #fff;
+}
+
+.card-body-login .forgot-pass {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  color: #007bff;
+  font-weight: 700;
+}
+
+@media (max-width: 769px) {
+  .img-login-left {
+    display: none;
+  }
+  .card-body-login {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -5,17 +5,11 @@
   color: #111;
 }
 .pi-pic {
-  // background-image: url(../assets/img/img-body1.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 47%;
-  position: relative;
-
   .text-pro-filter {
     position: absolute;
     width: 40px;
     height: 20px;
-    left: 16px;
+    left: 40px;
     top: 14px;
     font-size: 10px;
     font-weight: 500;
@@ -26,7 +20,9 @@
   }
 
   .icon-pro-filter {
-    margin-left: 85%;
+    position: absolute;
+    right: 16px;
+    bottom: 0;
   }
 
   .heart-pro-filter {

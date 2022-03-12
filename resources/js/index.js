@@ -26,3 +26,19 @@ $(function () {
     ]
   });
 });
+//onlaod js
+$(window).ready(()=>{
+  console.log("id product = " + $(".btn_del")[0].attributes[2].value);
+  
+})
+$(".btn_del").click((data)=>{
+  $.get("/product/delete/" + $id, (data)=>{
+    // xử lý product
+    if(data == 1){
+      //nếu xóa thành công
+      $.get("admin/listmenu", (data)=>{
+        $("#content").html(data);
+      })
+    }
+  })
+})

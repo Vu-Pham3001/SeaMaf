@@ -5493,6 +5493,21 @@ $(function () {
       }
     }]
   });
+}); //onlaod js
+
+$(window).ready(function () {
+  console.log("id product = " + $(".btn_del")[0].attributes[2].value);
+});
+$(".btn_del").click(function (data) {
+  $.get("/product/delete/" + $id, function (data) {
+    // xử lý product
+    if (data == 1) {
+      //nếu xóa thành công
+      $.get("admin/listmenu", function (data) {
+        $("#content").html(data);
+      });
+    }
+  });
 });
 
 /***/ }),

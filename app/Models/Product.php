@@ -41,6 +41,11 @@ class Product extends Model
 
     public function scopeProductTop($query)
     {
-        $query->where('is_top',1)->limit(8);
+        $query->where('is_top',1)->orderByDesc('id')->limit(8);
+    }
+
+    public function scopeProductMenu($query)
+    {
+        $query->orderByDesc('id')->paginate(20);
     }
 }

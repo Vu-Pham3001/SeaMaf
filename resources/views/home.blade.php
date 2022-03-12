@@ -89,13 +89,15 @@
 
     <div class="pro-filter mt-5">
         <div class="title-pro-filter">BROWSE TOP SELLING PRODUCTS</div>
-        <div class="container mt-3">
+        <div class="container">
             <div class="row">
                 @foreach($top as $product)
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-m-6 col-6">
-                        <div class="pro-filter-item">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-m-6 col-6 mt-5">
+                        <div class="pro-filter-item position-relative" style="position:relative; height: 200px;">
+                            <a href="">
+                                <img class="img-product123 w-100 h-100" src="{{asset('images/'.$product->img)}}" alt="{{$product->name}}">
+                            </a>
                             <div class="pi-pic border">
-                                <img class="" src="{{ $product->img }}" alt="{{$product->name}}">
                                 <div class="text-pro-filter d-flex justify-content-center align-items-center">{{ $product->sale }}</div>
                                 <div class="icon-pro-filter d-flex flex-column">
                                     <span>
@@ -106,7 +108,6 @@
                                     </span>
                                 </div>
                             </div>
-
                             <div class="d-flex" style="position:relative">
                                 <div class="pro-name" style="width: 70%;">{{ $product->name }}</div>
                                 <div class="price" style="position: absolute; right: 0;">$ {{ $product->price }}</div>

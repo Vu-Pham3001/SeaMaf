@@ -11456,17 +11456,11 @@ textarea.form-control-lg {
   color: #111;
 }
 
-.pi-pic {
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 47%;
-  position: relative;
-}
 .pi-pic .text-pro-filter {
   position: absolute;
   width: 40px;
   height: 20px;
-  left: 16px;
+  left: 40px;
   top: 14px;
   font-size: 10px;
   font-weight: 500;
@@ -11476,7 +11470,9 @@ textarea.form-control-lg {
   border-radius: 10px;
 }
 .pi-pic .icon-pro-filter {
-  margin-left: 85%;
+  position: absolute;
+  right: 16px;
+  bottom: 0;
 }
 .pi-pic .heart-pro-filter {
   padding: 5px;

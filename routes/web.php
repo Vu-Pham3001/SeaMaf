@@ -24,3 +24,7 @@ Route::get('user/profle', [App\Http\Controllers\AdminController::class, 'user'])
 Route::get('admin/add', [App\Http\Controllers\Products::class, 'add'])->name('addmenu');
 
 Route::post('admin/add', [App\Http\Controllers\Products::class, 'store'])->name('store');
+
+Route::get('admin/listmenu', [App\Http\Controllers\Products::class, 'index'])->name('listmenu');
+
+Route::DELETE('admin/listmenu', [App\Http\Controllers\Products::class, 'delete'])->name('del-product');
