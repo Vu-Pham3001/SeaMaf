@@ -18,9 +18,9 @@ class Profile
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::User()->is_admin == 1) {
+        if(Auth::User()->is_admin == 0) {
             return $next($request);
         }
-        return redirect()->route('userprofile');
+        return redirect()->route('profile');
     }
 }

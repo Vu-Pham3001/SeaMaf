@@ -84,7 +84,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a href="{{ route('profile') }}" style="text-decoration:none;"><div style="padding-left:16px; color: #000;">My Profile</div></a>
+                            <a href="{{ route('user', Auth::user()->id)}}" style="text-decoration:none;"><div style="padding-left:16px; color: #000;">My Profile</div></a>
                             <a href="" style="text-decoration:none;"><div style="padding-left:16px; color: #000;">My order</div></a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

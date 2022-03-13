@@ -44,10 +44,57 @@ class products extends Controller
         return view('admin.pages.listmenu', compact('products'));
     }
 
+    public function edit($id)
+    {
+        $id_pro = Product::where('id', $id)->first();
+        return view ('admin.pages.edit', compact('id_pro'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $info = Product::where('id', $id)->first();
+
+        if(isset($request['name-product'])) {
+            $info->name = $request['name-product'];
+        }
+
+        if(isset($request['categori_id'])) {
+            $info->categori_id = $request['categori_id'];
+        }
+
+        if(isset($request['img'])) {
+            $info->img = $request['img'];
+        }
+
+        if(isset($request['description'])) {
+            $info->description = $request['description'];
+        }
+
+        if(isset($request['code'])) {
+            $info->code = $request['code'];
+        }
+
+        if(isset($request['price'])) {
+            $info->price = $request['price'];
+        }
+
+        if(isset($request['is_top'])) {
+            $info->is_top = $request['is_top'];
+        }
+
+        if(isset($request['sale'])) {
+            $info->sale = $request['sale'];
+        }
+
+        $info->save();
+
+        return redirect()->back()->with('successful', 'cập nhật thành công');
+    }
+
     public function delete(Request $request, $id)
     {
-        $id_pro = Product::find($id);
-        $id_pro->delete();
-        return redirect('/admin/listmenu');
+        // $id_pro = Product::where('id', $id)->first();
+        // $id_pro->delete();
+        // return redirect('/admin/listmenu');
     }
 }
