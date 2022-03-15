@@ -17,10 +17,17 @@ class products extends Controller
 
     protected function create($data)
     {
+        if($data->has('img')) {
+            $file = $data->file('img');
+            $file_name = $file->getClientOriginalName();
+            $file->move(base_path('public\images'),$file_name);
+            // return $file_name;
+        }
+
         return Product::create([
             'name' => $data['name-product'],
             'categori_id' => $data['categori_id'],
-            'img' => $data['img'],
+            'img' => $file_name,
             'description' => $data['description'],
             'code' => $data['code'],
             'price' => $data['price'],

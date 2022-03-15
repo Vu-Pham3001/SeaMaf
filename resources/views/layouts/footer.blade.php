@@ -5,7 +5,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="title-about title-footer">ABOUT</div>
                     <div class="content-about">Online & physical bead shop with the best beads and beading supplies in Zimbabwe ✓ Over 9000 beads for jewelry making ✓ Glass beads ✓ Beading supplies and much more!</div>
-                    <img src="./assets/img/card-about-footer.png" alt="card" class="card-footer" style="width: 90%;">
+                    <img src="{{asset('assets/img/card-about-footer.png')}}" alt="card" class="card-footer" style="width: 90%;">
                     <div class="d-flex">
                         <input type="text" placeholder="Enter e-mail" id="" style="width: 100%; border: none; border-radius: 5px;">
                         <input type="submit" value="subscribe" style="border: none; background: 0;position: absolute; right: 0; color: #dc3545;margin-right: 16px;">

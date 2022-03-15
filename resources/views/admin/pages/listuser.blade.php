@@ -3,6 +3,7 @@
 @section('title', 'Danh sách người dùng')
 
 @section('content')
+    @include('admin.menu.alert')
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Responsive Hover Table</h3>
@@ -25,10 +26,10 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
+                        <th>Tên</th>
                         <th>Email</th>
-                        <th>Updated_at</th>
-                        <th>Edit</th>
+                        <th>Cập nhật gần nhất</th>
+                        <th>Giỏ hàng</th>
                         <th>Xóa</th>
                     </tr>
                 </thead>
@@ -41,7 +42,7 @@
                             <td><span class="tag tag-success">{{$user->updated_at}}</span></td>
                             <td>
                                 <a href="">
-                                    <i class="fas fa-edit"></i>
+                                    <i class="fas fa-shopping-cart"></i>
                                 </a>
                             </td>
                             <td>

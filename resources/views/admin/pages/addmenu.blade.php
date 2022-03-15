@@ -3,7 +3,7 @@
 @section('title', 'thêm sản phẩm')
 
 @section('content')
-    <form action="{{route('store')}}" method="POST">
+    <form action="{{route('store')}}" method="POST" enctype="multipart/form-data">
         <div class="card-body">
             @include('admin.menu.alert')
             <div class="container">
@@ -21,11 +21,11 @@
                             <label for="exampleInputFile" style="margin-bottom:0;">Ảnh sản phẩm</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="img" required autocomplete="img">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="img">
                                     <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                 </div>
                                 <div class="input-group-append">
-                                    <span class="input-group-text">Upload</span>
+                                    <span class="input-group-text" type="button">Upload</span>
                                 </div>
                             </div>
                         </div>

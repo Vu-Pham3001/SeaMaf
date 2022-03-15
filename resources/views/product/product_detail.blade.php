@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Chi tiết sản phẩm')
+
 @section('content')
     <div class="page-top-product mt-3">
         <div class="container">
@@ -52,7 +54,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-m-6 col-6 mb-5">
                     <div class="pro-filter-item" style="position:relative; height: 200px;">
                         <a href="{{ route('pro-detail', [$cate_id->id])}}">
-                            <img class="img-product123" src="{{$cate_id->img}}" alt="{{$cate_id->name}}" style="width:100%; height:100%;">
+                            <img class="img-product123" src="{{asset('images/'.$cate_id->img)}}" alt="{{$cate_id->name}}" style="width:100%; height:100%;">
                         </a>
                         <div class="pi-pic border">
                             <div class="text-pro-filter d-flex justify-content-center align-items-center">{{ $cate_id->sale }}</div>
