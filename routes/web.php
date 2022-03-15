@@ -35,5 +35,9 @@ Route::prefix('admin')->group(function() {
     Route::get('/listmenu', [Products::class, 'index'])->name('listmenu');
     Route::get('/listmenu/edit/{id}', [Products::class, 'edit'])->name('edit-product');
     Route::post('/listmenu/update/{id}', [Products::class, 'update'])->name('update-product');
-    Route::DELETE('/listmenu/delete/{id}', [Products::class, 'delete'])->name('del-product');
+    Route::post('/listmenu/delete/{id}', [Products::class, 'delete'])->name('del-product');
 });
+
+Route::get('product/{id}', [Products::class, 'detail'])->name('pro-detail');
+
+Route::get('listuser', [AdminController::class, 'listuser'])->name('list-user');

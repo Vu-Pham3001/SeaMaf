@@ -3,6 +3,7 @@
 @section('title', 'danh sách sản phẩm')
 
 @section('content')
+    @include('admin.menu.alert')
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -49,17 +50,27 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="{{route('edit-product', [$product->id])}}" class="btn btn-danger btn-sm btn_del">
+                                    <form action="{{ route('del-product', [$product->id])}}" method="POST">
+                                        @csrf
+                                        <!-- <i class="fas fa-trash-alt" type="submit"></i> -->
+                                        <button type="submit" class="bg-white border-0">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                    <!-- <a href="{{route('edit-product', [$product->id])}}" class="btn btn-danger btn-sm btn_del">
                                         <i class="fas fa-trash-alt"></i>
-                                    </a>
+                                    </a> -->
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                 </div>
+
                 <!-- /.card-body -->
             </div>
+            
+            <span>{!! $products->appends(request()->all())->onEachSide(1)->links() !!}</span>
             <!-- /.card -->
         </div>
     </div>

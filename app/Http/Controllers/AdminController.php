@@ -14,8 +14,15 @@ class AdminController extends Controller
         return view('admin.pages.dashboard');
     }
 
-    public function user()
+    // public function user()
+    // {
+    //     return view('test1');
+    // }
+
+    public function listuser()
     {
-        return view('test1');
+        $users = User::userMenu()->simplePaginate(config('config.paginate'));
+
+        return view('admin.pages.listuser', compact('users'));
     }
 }

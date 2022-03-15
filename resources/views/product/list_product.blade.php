@@ -1,6 +1,6 @@
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-m-6 col-6 mb-5">
     <div class="pro-filter-item" style="position:relative; height: 200px;">
-        <a href="">
+        <a href="{{ route('pro-detail', [$product->id])}}">
             <img class="img-product123" src="{{asset('images/'.$product->img)}}" alt="{{$product->name}}" style="width:100%; height:100%;">
         </a>
         <div class="pi-pic border">

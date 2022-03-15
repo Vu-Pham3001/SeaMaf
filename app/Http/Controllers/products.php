@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\Image;
 use Session;
 
 class products extends Controller
@@ -39,7 +40,7 @@ class products extends Controller
 
     public function index()
     {
-        $products = Product::productMenu()->get();
+        $products = Product::productMenu()->simplePaginate(config('config.paginate'));
 
         return view('admin.pages.listmenu', compact('products'));
     }
@@ -93,8 +94,21 @@ class products extends Controller
 
     public function delete(Request $request, $id)
     {
-        // $id_pro = Product::where('id', $id)->first();
-        // $id_pro->delete();
-        // return redirect('/admin/listmenu');
+        $id_del = Product::where('id', $id)->first();
+
+        $id_del->delete();
+
+        return redirect()->back()->with('successful', 'Xóa sản phẩm thành công');
+    }
+
+    public function detail($id)
+    {
+        $pro_detai = Product::where('id', $id)->first();
+
+        $pro_img = Image::where('product_id', $id)->get();
+
+        $cate = Product::where('categori_id', $pro_detai->categori_id)->get();
+
+        return view('product.product_detail', compact('pro_detai','pro_img', 'cate'));
     }
 }

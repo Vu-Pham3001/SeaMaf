@@ -46,6 +46,6 @@ class Product extends Model
 
     public function scopeProductMenu($query)
     {
-        $query->orderByDesc('id')->paginate(20);
+        $query->orderByDesc('id');
     }
 }

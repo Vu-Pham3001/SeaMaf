@@ -94,7 +94,7 @@
                 @foreach($top as $product)
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-m-6 col-6 mt-5">
                         <div class="pro-filter-item position-relative" style="position:relative; height: 200px;">
-                            <a href="">
+                            <a href="{{ route('pro-detail', [$product->id])}}">
                                 <img class="img-product123 w-100 h-100" src="{{asset('images/'.$product->img)}}" alt="{{$product->name}}">
                             </a>
                             <div class="pi-pic border">
