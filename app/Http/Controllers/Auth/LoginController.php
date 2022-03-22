@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Auth;
 use Session;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class LoginController extends Controller
 {
@@ -50,19 +51,17 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
-        if(Auth::attempt($arr)){
+        if(FacadesAuth::attempt($arr)){
             return redirect('/');
         } else {
 
-            Session::flash('error', 'Đăng nhập thất bại');
-
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Đăng nhập thất bại');
         }
     }
 
     public function logout()
     {
-        Auth::logout();
+        FacadesAuth::logout();
         return redirect('/')->with('success', 'you are logout');
     }
 }

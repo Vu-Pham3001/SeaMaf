@@ -41,7 +41,7 @@
                             <td>{{$user->email}}</td>
                             <td><span class="tag tag-success">{{$user->updated_at}}</span></td>
                             <td>
-                                <a href="">
+                                <a href="{{route('cartuser', [$user->id])}}">
                                     <i class="fas fa-shopping-cart"></i>
                                 </a>
                             </td>

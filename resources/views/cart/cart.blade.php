@@ -1,8 +1,9 @@
-<!-- @extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Giỏ hàng')
 
 @section('content')
+    @include('admin.menu.alert')
     <div class="container mt-3 mb-3">
         <div class="row">
             <div class="col-lg-8">
@@ -28,9 +29,13 @@
                                         <td>{{$id->quanlity}}</td>
                                         <td>$ {{$id->product->price}}</td>
                                         <td>
-                                            <a href="">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
+                                            <form action="{{ route('del-cart', [$id->product_id])}}" method="POST">
+                                                @csrf
+                                                <!-- <i class="fas fa-trash-alt" type="submit"></i> -->
+                                                <button type="submit" class="bg-white border-0">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -44,4 +49,4 @@
             </div>
         </div>
     </div>
-@endsection -->
+@endsection

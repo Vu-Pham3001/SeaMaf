@@ -4,11 +4,12 @@
             <div class="col-lg-2 d-flex justify-content-center align-items-center mt-2">
                 <a href="/" class="title-header" style="color: #000;"><h4>RVM SeaMaf</h4></a>
             </div>
-
             <div class="col-xl-6 col-lg-5 mt-2">
-                <input type="text" placeholder="Search on RVM SeaMaf ..." class="search w-100" style="padding: 0 19px;">
+                <form action="{{ route('search') }}" method="POST">
+                @csrf
+                    <input type="text" placeholder="Search on RVM SeaMaf ..." class="search w-100" name="keyword" style="padding: 0 19px;">
+                </form>
             </div>
-
             <div class="col-xl-4 col-lg-5 mt-2">
                 <div class="info-product d-flex justify-content-center align-items-center">
                     <div class="items-1">
@@ -30,13 +31,13 @@
                         <div class="ml-1">WishList</div>
                     </div>
 
-                    <div class="items-3 d-flex ml-3">
+                    <a href="{{ route('cart')}}" class="items-3 d-flex ml-3" style="color:#000; text-decoration:none;">
                         <div class="shopping-card">
                             <i class="fas fa-shopping-bag"></i>
                         </div>
 
                         <div class="ml-1">Shopping Cart</div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

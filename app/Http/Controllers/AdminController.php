@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Auth;
 use App\Models\User;
+use App\Models\Cart;
 
 class AdminController extends Controller
 {
@@ -24,5 +25,12 @@ class AdminController extends Controller
         $users = User::userMenu()->simplePaginate(config('config.paginate'));
 
         return view('admin.pages.listuser', compact('users'));
+    }
+
+    public function cart($id)
+    {
+        $proIdCart = Cart::where(['user_id' => $id])->with('product')->get();
+
+        return view('test', compact('proIdCart'));
     }
 }

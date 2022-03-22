@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 use App\Http\Controllers\Products;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Models\Cart;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +20,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Auth::routes();
+FacadesAuth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -26,6 +29,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::prefix('user')->group(function() {
     Route::get('/profile/{id}', [UserController::class, 'edit'])->name('user')->middleware('profile');
     Route::post('/update/{id}', [UserController::class, 'update'])->name('update-user');
+    Route::post('addcart',[UserController::class, 'addcart'])->name('addcart')->middleware('auth');
+    Route::get('cart', [UserController::class, 'cart'])->name('cart')->middleware('auth');
 });
 
 Route::prefix('admin')->group(function() {
@@ -41,3 +46,9 @@ Route::prefix('admin')->group(function() {
 Route::get('product/{id}', [Products::class, 'detail'])->name('pro-detail');
 
 Route::get('listuser', [AdminController::class, 'listuser'])->name('list-user');
+
+Route::get('cartuser/{id}',[AdminController::class, 'cart'])->name('cartuser');
+
+Route::post('cart/delete/{id}', [CartController::class, 'delete'])->name('del-cart');
+
+Route::post('search', [Products::class, 'search'])->name('search');

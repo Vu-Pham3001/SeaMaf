@@ -11,6 +11,7 @@ use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class RegisterController extends Controller
 {
@@ -71,7 +72,7 @@ class RegisterController extends Controller
     {
         $user = $this->create($request);
 
-        Auth::login($user);
+        FacadesAuth::login($user);
 
         return redirect('/')->with('success', 'The new account created successfully! Let is login!');
 

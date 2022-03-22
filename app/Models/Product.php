@@ -48,4 +48,14 @@ class Product extends Model
     {
         $query->orderByDesc('id');
     }
+
+    public function scopeFilter($query, $data)
+    {
+        if(isset($data['keyword'])) {
+            $query->where('name', 'like', '%'.$data['keyword'].'%')
+                    ->orWhere('code', 'like', '%'.$data['keyword'].'%');
+        }
+
+        return $query;
+    }
 }

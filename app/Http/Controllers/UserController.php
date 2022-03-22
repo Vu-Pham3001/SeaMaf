@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Session;
-use Auth;
+// use Session;
+// use Auth;
+use App\Models\Cart;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class UserController extends Controller
 {
@@ -32,10 +34,35 @@ class UserController extends Controller
             $user_info->password = bcrypt($request['password']);
         }
 
-        // dd($user_info);
-
         $user_info->save();
 
         return redirect()->back()->with('successful', 'cập nhật thông tin thành công');
+    }
+
+    public function addcart(Request $request)
+    {
+        $cartId = Cart::where('product_id', (string)$request->input('product_id'))->where('user_id', FacadesAuth::user()->id)->get();
+        if(count($cartId)>=1) {
+            Cart::where('id', $cartId[0]->id)->update(['quanlity'=> $cartId[0]->quanlity+1]);
+        }
+        else{
+            Cart::create([
+                'user_id' => FacadesAuth::user()->id,
+                'product_id' => (int)$request->input('product_id'),
+                'status' => 1,
+                'quanlity' => 1,
+            ]);
+        }
+
+        return redirect()->back()->with('successful', 'Thêm vào giỏ hàng thành công');
+    }
+
+    public function cart()
+    {
+        $user = FacadesAuth::user();
+
+        $proIdCart = Cart::where(['user_id' => $user->id])->with('product')->get();
+
+        return view('cart.cart', compact('proIdCart'));
     }
 }

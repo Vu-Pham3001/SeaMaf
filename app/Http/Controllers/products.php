@@ -7,6 +7,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\Image;
 use Session;
+use App\Models\Cart;
 
 class products extends Controller
 {
@@ -21,7 +22,6 @@ class products extends Controller
             $file = $data->file('img');
             $file_name = $file->getClientOriginalName();
             $file->move(base_path('public\images'),$file_name);
-            // return $file_name;
         }
 
         return Product::create([
@@ -40,9 +40,7 @@ class products extends Controller
     {
         $product = $this->create($request);
 
-        Session::flash('successful', 'Tạo danh mục thành công');
-
-        return redirect('/admin/add');
+        return redirect('/admin/add')->with('successful', 'Tạo danh mục thành công');
     }
 
     public function index()
@@ -101,9 +99,13 @@ class products extends Controller
 
     public function delete(Request $request, $id)
     {
+        $idDelCart = Cart::where('product_id', $id)->first();
+
         $id_del = Product::where('id', $id)->first();
 
         $id_del->delete();
+
+        $idDelCart->delete();
 
         return redirect()->back()->with('successful', 'Xóa sản phẩm thành công');
     }
@@ -117,5 +119,16 @@ class products extends Controller
         $cate = Product::where('categori_id', $pro_detai->categori_id)->get();
 
         return view('product.product_detail', compact('pro_detai','pro_img', 'cate'));
+    }
+
+    public function search(Request $request)
+    {
+        $data = $request->input();
+        // dd($data);
+        $searchs = Product::filter($data)->get();
+
+        // dd($searchs);
+
+        return view('product.search', compact('searchs'));
     }
 }

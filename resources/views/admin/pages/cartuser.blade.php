@@ -1,6 +1,6 @@
-<!-- @extends('layouts.app')
+@extends('layouts.app')
 
-@section('title', 'Giỏ hàng')
+@section('title', 'Giỏ hàng người dùng')
 
 @section('content')
     <div class="container mt-3 mb-3">
@@ -44,4 +44,4 @@
             </div>
         </div>
     </div>
-@endsection -->
+@endsection

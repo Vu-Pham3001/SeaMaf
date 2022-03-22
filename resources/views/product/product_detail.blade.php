@@ -3,9 +3,10 @@
 @section('title', 'Chi tiết sản phẩm')
 
 @section('content')
+    @include('admin.menu.alert')
     <div class="page-top-product mt-3">
         <div class="container">
-            <div class="title-page-product">{{$pro_detai->categori_id}}</div>
+            <div class="title-page-product" style="font-size:24px; font-weight: 700;">{{$pro_detai->categori_id}}</div>
         </div>
     </div>
     <div class="page-body mt-3 mb-3">
@@ -26,30 +27,29 @@
                         @endforeach
                     </div>
                 </div>
+
                 <div class="col-lg-6 col-sm-12">
-                    <div class="">{{$pro_detai->name}}</div>
-                    <div class="">$ {{$pro_detai->price}}</div>
-                    <div class="">Availability: In Stock</div>
-                    <div class="d-flex">
-                        <div class="">QUANTITY:</div>
-                        <div class="pro-qty">
-                            <span class="dec qtybtn">-</span>
-                            <input type="text" name="quantity" value="1">
-                            <span class="inc qtybtn">+</span>
-                        </div>
-                    </div>
-                    <div class="btn btn-danger mt-2">ADD TO CART</div>
-                    <div class="mt-2 mb-2">
-                        <div>DESCRIPTION:</div>
-                        <div>{{$pro_detai->description}}</div>
+                    <div class="" style="font-size:18px; font-weight: 700;">{{$pro_detai->name}}</div>
+                    <div class="mt-3" style="font-size:24px; font-weight: 700;">$ {{$pro_detai->price}}</div>
+                    <div class="mt-3" style="font-size: 15px;">Availability: In Stock</div>
+
+                    <form action="{{route('addcart')}}" method="POST">
+                        @csrf
+                        <input type="text" value="{{$pro_detai->id}}" class="d-none" name="product_id">
+                        <button class="btn btn-danger mt-3" type="submit">ADD TO CART</button>
+                    </form>
+
+                    <div class="mt-3 mb-2">
+                        <div style="font-size:20px; font-weight:700;">DESCRIPTION:</div>
+                        <div style="font-size:15px;">{{$pro_detai->description}}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="text-center">RELATED PRODUCTS</div>
-        <div class="row list-product">
+        <div class="text-center" style="font-size:24px; font-weight:600;">RELATED PRODUCTS</div>
+        <div class="row list-product mt-3 mb-3">
             @foreach($cate as $cate_id)
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-m-6 col-6 mb-5">
                     <div class="pro-filter-item" style="position:relative; height: 200px;">
